@@ -1,17 +1,16 @@
-VPATH= src:test
-CXX=g++
+#VPATH= src:test
+CFLAGS= -Wall -Wextra -pedantic
+CXX=g++ $(FLAGS)
 TEST_LIBS=-lgtest -lgtest_main
-TEST_FILES=./test/*.cpp
-SOURCE_FILES=./src/*.cpp
-OBJECT_FILES=./src/*.o ./test/*.o
-FILES = $(TEST_FILES) $(SOURCE_FILES)
 
-all:
-	cd src/ && $(CXX) -c *.cpp
-	cd test/ && $(CXX) -c *.cpp
-
-test: all
+test: test/particle_spec.o test/color_spec.o test/mass_spec.o all
 	rm -f ./tests
-	$(CXX) $(OBJECT_FILES) $(TEST_LIBS) -o tests
+	$(CXX) test/*.o src/*.o $(TEST_LIBS) -o tests
 	./tests
+
+all: src/Particle.o src/Color.o src/Mass.o
+
+.cpp.o:
+	$(CXX) -c $(CFLAGS) $< -o $@
+
 

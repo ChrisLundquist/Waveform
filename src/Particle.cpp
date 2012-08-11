@@ -5,6 +5,14 @@ Particle::Particle() {
   color = Color();
 }
 
+void Particle::render() {
+    return;
+}
+
+void Particle::update() {
+    return;
+}
+
 const Color& Particle::get_color() {
     return color;
 }
