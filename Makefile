@@ -1,6 +1,6 @@
 #VPATH= src:test
 CFLAGS= -Wall -Wextra -pedantic
-CXX=g++ $(FLAGS)
+CXX=g++-4.2
 TEST_LIBS=-lgtest -lgtest_main
 LIBS= -lGLEW
 FRAMEWORKS = -framework GLUT -framework OpenGL
@@ -15,7 +15,8 @@ all: src/Particle.o src/Color.o src/Mass.o src/Actor.o src/Waveform.o
 game: all main.o
 	$(CXX) $(FRAMEWORKS) $(LIBS) main.cpp -o Waveform
 
-
+clean:
+	rm -rf src/*o test/*o Waveform
 
 .cpp.o:
 	$(CXX) -c $(CFLAGS) $< -o $@
