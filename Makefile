@@ -13,7 +13,7 @@ test: test/particle_spec.o test/color_spec.o test/mass_spec.o test/actor_spec.o 
 all: src/Particle.o src/Color.o src/Mass.o src/Actor.o src/Waveform.o src/ParticleGenerator.o
 
 game: all main.o
-	$(CXX) $(FRAMEWORKS) $(LIBS) src/Waveform.o main.cpp -o Waveform
+	$(CXX) $(FRAMEWORKS) $(LIBS) src/*.o main.cpp -o Waveform
 
 run: game
 	./Waveform

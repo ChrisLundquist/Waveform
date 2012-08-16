@@ -2,6 +2,7 @@
 
 #include "Waveform.h"
 #include "Actor.h"
+
 Waveform::Waveform() {
     running_ = false;
 }
