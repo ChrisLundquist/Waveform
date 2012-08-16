@@ -3,6 +3,7 @@
 Particle::Particle() {
   mass = Mass();
   color = Color();
+  age = 0;
 }
 
 void Particle::render() {
@@ -10,6 +11,7 @@ void Particle::render() {
 }
 
 void Particle::update() {
+    age++;
     mass.update();
     return;
 }

@@ -22,4 +22,6 @@ TEST(Actor,Stress) {
     }
 
     EXPECT_EQ(Actor::actors().size(), 1024);
+
+    Actor::actors().clear();
 }

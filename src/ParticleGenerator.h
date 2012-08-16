@@ -1,6 +1,7 @@
-#include "Actor.h"
+#include "Particle.h"
 
-class ParticleGenerator : Actor  {
+struct ParticleGenerator : Actor  {
     void render();
     void update();
+    int intensity;
 };

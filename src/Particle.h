@@ -8,4 +8,5 @@ struct Particle : public Actor {
     virtual void update();
     Mass mass;
     Color color;
+    int age;
 };
