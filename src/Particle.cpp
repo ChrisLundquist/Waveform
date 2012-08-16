@@ -10,13 +10,7 @@ void Particle::render() {
 }
 
 void Particle::update() {
+    mass.update();
     return;
 }
 
-const Color& Particle::get_color() {
-    return color;
-}
-
-const Mass& Particle::get_mass() {
-    return mass;
-}

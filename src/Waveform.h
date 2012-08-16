@@ -5,4 +5,5 @@ class Waveform {
     void update();
     bool running();
     bool pause();
+    bool start();
 };

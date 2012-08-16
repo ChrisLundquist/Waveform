@@ -2,14 +2,10 @@
 #include "Color.h"
 #include "Actor.h"
 
-class Particle : public Actor {
-    Mass mass;
-    Color color;
-
-    public:
+struct Particle : public Actor {
     Particle();
     virtual void render();
     virtual void update();
-    const Mass& get_mass();
-    const Color& get_color();
+    Mass mass;
+    Color color;
 };

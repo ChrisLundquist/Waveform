@@ -6,3 +6,9 @@ Mass::Mass() {
     velocity = glm::vec3(0.0f);
     acceleration = glm::vec3(0.0f);
 }
+
+
+void Mass::update() {
+    velocity += acceleration;
+    position += velocity;
+}
