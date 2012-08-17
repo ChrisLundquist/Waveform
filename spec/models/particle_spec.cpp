@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../src/Particle.h"
+#include "../../src/models/Particle.h"
 
 TEST(Particle, Construct) {
     Particle p = Particle();
