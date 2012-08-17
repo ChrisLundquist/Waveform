@@ -4,13 +4,16 @@ CXX=g++-4.2
 TEST_LIBS=-lgtest -lgtest_main
 LIBS= -lGLEW
 FRAMEWORKS = -framework GLUT -framework OpenGL
+OBJECT_FILES =  src/models/*.o
+OBJECT_SPEC_FILES = spec/models/*.o
+#spec/controllers/*.o spec/views/*.o src/controllers/*.o src/views/*.o
 
 
 test: all model_specs controller_specs view_specs
 	rm -f ./tests
-	$(CXX) spec/models/*.o src/models/*.o  $(TEST_LIBS) -o tests
+	$(CXX) $(OBJECT_FILES) $(OBJECT_SPEC_FILES) $(TEST_LIBS) -o tests
 	./tests
-#spec/controllers/*.o spec/views/*.o src/controllers/*.o src/views/*.o
+
 model_specs: spec/models/particle_spec.o spec/models/color_spec.o spec/models/mass_spec.o spec/models/actor_spec.o spec/models/particle_generator_spec.o
 
 controller_specs:
@@ -26,7 +29,7 @@ views:
 all: models controllers views
 
 game: all main.o
-	$(CXX) $(FRAMEWORKS) $(LIBS) src/*.o main.cpp -o Waveform
+	$(CXX) $(FRAMEWORKS) $(LIBS) $(OBJECT_FILES) main.cpp -o Waveform
 
 run: game
 	./Waveform

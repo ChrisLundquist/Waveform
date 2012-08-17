@@ -1,6 +1,6 @@
 #include <iostream>
 #include "src/graphics.h"
-#include "src/Waveform.h"
+#include "src/models/Waveform.h"
 
 int main(int argc, char** argv) {
     Waveform game = Waveform();
