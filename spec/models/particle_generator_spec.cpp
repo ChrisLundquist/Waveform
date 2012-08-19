@@ -27,3 +27,30 @@ TEST(ParticleGenerator, NewParticlePosition) {
 
     EXPECT_EQ(p.mass.position[0], generator.position[0]);
 }
+
+TEST(ParticleGenerator, Update){
+    ParticleGenerator generator = ParticleGenerator();
+
+    generator.intensity = 1;
+    generator.update();
+
+    EXPECT_EQ(generator.particles.size(), 1);
+}
+
+TEST(ParticleGenerator, UpdateRepeat){
+    ParticleGenerator generator = ParticleGenerator();
+
+    generator.intensity = 1;
+    generator.update();
+    generator.update();
+
+    EXPECT_EQ(generator.particles.size(), 2);
+}
+
+TEST(ParticleGenerator, UpdateIntensity){
+    ParticleGenerator generator = ParticleGenerator();
+
+    generator.intensity = 2;
+    generator.update();
+    EXPECT_EQ(generator.particles.size(), 2);
+}
