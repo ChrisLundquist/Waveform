@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../../src/models/Mass.h"
+#include "../../src/models/mass.h"
 
 TEST(Mass,Construct) {
     Mass m = Mass();

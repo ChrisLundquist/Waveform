@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../../src/models/ParticleGenerator.h"
+#include "../../src/models/particle_generator.h"
 
 TEST(ParticleGenerator, Construct) {
     ParticleGenerator generator = ParticleGenerator();

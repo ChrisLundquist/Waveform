@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../../src/models/Particle.h"
+#include "../../src/models/particle.h"
 
 TEST(Actor,actors){
     Actor::actors();

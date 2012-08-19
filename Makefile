@@ -20,7 +20,7 @@ controller_specs:
 
 view_specs:
 
-models: src/models/Particle.o src/models/Color.o src/models/Mass.o src/models/Actor.o src/models/Waveform.o src/models/ParticleGenerator.o
+models: src/models/particle.o src/models/color.o src/models/mass.o src/models/actor.o src/models/waveform.o src/models/particle_generator.o
 
 controllers:
 

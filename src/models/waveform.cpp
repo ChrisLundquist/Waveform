@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "Waveform.h"
+#include "waveform.h"
 #include "actor.h"
 
 Waveform::Waveform() {

@@ -1,4 +1,4 @@
-#include "Mass.h"
+#include "mass.h"
 #include "color.h"
 #include "actor.h"
 

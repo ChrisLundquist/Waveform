@@ -1,4 +1,4 @@
-#include "Mass.h"
+#include "mass.h"
 
 Mass::Mass() {
     mass = 0.0f;

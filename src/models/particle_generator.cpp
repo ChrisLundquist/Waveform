@@ -1,4 +1,4 @@
-#include "ParticleGenerator.h"
+#include "particle_generator.h"
 
 ParticleGenerator::ParticleGenerator(){
     intensity = 0;
