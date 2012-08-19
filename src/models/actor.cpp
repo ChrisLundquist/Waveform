@@ -1,4 +1,4 @@
-#include "Actor.h"
+#include "actor.h"
 
 std::vector<Actor*>* Actor::actors_ = new std::vector<Actor*>();
 

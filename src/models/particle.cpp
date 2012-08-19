@@ -6,10 +6,6 @@ Particle::Particle() {
   age = 0;
 }
 
-void Particle::render() {
-    return;
-}
-
 void Particle::update() {
     age++;
     mass.update();

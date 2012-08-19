@@ -1,10 +1,9 @@
 #include "Mass.h"
-#include "Color.h"
-#include "Actor.h"
+#include "color.h"
+#include "actor.h"
 
 struct Particle : public Actor {
     Particle();
-    virtual void render();
     virtual void update();
     Mass mass;
     Color color;

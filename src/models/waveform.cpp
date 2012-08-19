@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "Waveform.h"
-#include "Actor.h"
+#include "actor.h"
 
 Waveform::Waveform() {
     running_ = false;

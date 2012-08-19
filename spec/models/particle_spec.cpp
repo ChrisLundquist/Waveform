@@ -5,11 +5,6 @@ TEST(Particle, Construct) {
     Particle p = Particle();
 }
 
-TEST(Particle, Render) {
-    Particle p = Particle();
-    p.render();
-}
-
 TEST(Particle, Update) {
     Particle p = Particle();
     p.update();
