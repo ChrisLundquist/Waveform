@@ -1,11 +1,8 @@
 #include <vector>
-#include "../models/actor.h"
+#include "../models/particle_generator.h"
 
 struct ParticleGeneratorController {
     ParticleGeneratorController();
     void update();
-    const std::vector<Actor*>& actors();
-
-     private:
-         std::vector<Actor*> actors_;
+    std::vector<ParticleGenerator*> generators;
 };

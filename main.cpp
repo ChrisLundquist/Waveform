@@ -1,6 +1,6 @@
 #include <iostream>
 #include "src/graphics.h"
-#include "src/models/Waveform.h"
+#include "src/models/waveform.h"
 
 int main(int argc, char** argv) {
     Waveform game = Waveform();
@@ -20,6 +20,7 @@ int main(int argc, char** argv) {
     game.start();
     while(game.running()){
         game.update();
+        game.pause();
     }
     return 0;
 }

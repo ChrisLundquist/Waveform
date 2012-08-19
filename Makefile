@@ -14,6 +14,9 @@ test: all model_specs controller_specs view_specs
 	$(CXX) $(OBJECT_FILES) $(OBJECT_SPEC_FILES) $(TEST_LIBS) -o tests
 	./tests
 
+valgrind: test
+	valgrind --leak-check=yes ./tests
+
 model_specs: spec/models/particle_spec.o spec/models/color_spec.o spec/models/mass_spec.o spec/models/particle_generator_spec.o
 
 controller_specs: spec/controllers/actor_controller_spec.o spec/controllers/particle_generator_controller_spec.o

@@ -1,18 +1,12 @@
 #include "particle_generator_controller.h"
-#include "../models/particle_generator.h"
-
 
 ParticleGeneratorController::ParticleGeneratorController(){
-    actors_ = std::vector<Actor*>();
-}
-
-const std::vector<Actor*>& ParticleGeneratorController::actors() {
-    return actors_;
+    generators = std::vector<ParticleGenerator*>();
 }
 
 void ParticleGeneratorController::update() {
-    for( unsigned i = 0; i < actors().size(); i++) {
-        ParticleGenerator generator = *(ParticleGenerator*) actors()[i];
+    for( unsigned i = 0; i < generators.size(); i++) {
+        ParticleGenerator generator = *generators[i];
         generator.update();
     }
 }
