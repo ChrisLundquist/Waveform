@@ -7,6 +7,12 @@ ParticleGenerator::ParticleGenerator(){
     particles = std::vector<Particle*>();
 }
 
+ParticleGenerator::~ParticleGenerator() {
+    while(!particles.empty()) {
+        delete particles.back(), particles.pop_back();
+    }
+}
+
 Particle* ParticleGenerator::generate(){
     Particle* p = new Particle();
     p->mass.velocity = direction;

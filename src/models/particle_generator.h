@@ -3,6 +3,7 @@
 
 struct ParticleGenerator {
     ParticleGenerator();
+    ~ParticleGenerator();
     Particle* generate();
     void update();
     int intensity;

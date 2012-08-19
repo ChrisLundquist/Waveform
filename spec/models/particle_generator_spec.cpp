@@ -14,18 +14,20 @@ TEST(ParticleGenerator, NewParticleVelocity) {
     generator.direction = glm::vec3(1,0,0);
 
     generator.intensity = 1;
-    Particle p = *generator.generate();
+    Particle* p = generator.generate();
 
-    EXPECT_EQ(p.mass.velocity[0], generator.direction[0]);
+    EXPECT_EQ(p->mass.velocity[0], generator.direction[0]);
+    delete p;
 }
 
 TEST(ParticleGenerator, NewParticlePosition) {
     ParticleGenerator generator = ParticleGenerator();
 
     generator.intensity = 1;
-    Particle p = *generator.generate();
+    Particle* p = generator.generate();
 
-    EXPECT_EQ(p.mass.position[0], generator.position[0]);
+    EXPECT_EQ(p->mass.position[0], generator.position[0]);
+    delete p;
 }
 
 TEST(ParticleGenerator, Update){
