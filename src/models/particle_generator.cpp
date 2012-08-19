@@ -6,16 +6,10 @@ ParticleGenerator::ParticleGenerator(){
     position = glm::vec3(0,0,0);
 }
 
-void ParticleGenerator::render(){
-    return;
-}
+Particle* ParticleGenerator::generate(){
+    Particle* p = new Particle();
+    p->mass.velocity = direction;
+    p->mass.position = position;
 
-void ParticleGenerator::update(){
-    for(int i = 0; i < intensity; i++){
-        Particle* p = new Particle();
-        p->mass.velocity = direction;
-        p->mass.position = position;
-        Actor::actors().push_back(p);
-    }
-    return;
+    return p;
 }

@@ -1,9 +1,9 @@
-#include <vector>
+#ifndef ACTOR_H
+#define ACTOR_H
 
 class Actor {
     public:
     virtual void update() = 0;
-    static std::vector<Actor*>& actors();
-    private:
-        static std::vector<Actor*>* actors_;
 };
+
+#endif

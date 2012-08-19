@@ -1,0 +1,3 @@
+struct ParticleGeneratorController {
+    void update();
+};

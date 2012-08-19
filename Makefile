@@ -4,9 +4,9 @@ CXX=g++-4.2
 TEST_LIBS=-lgtest -lgtest_main
 LIBS= -lGLEW
 FRAMEWORKS = -framework GLUT -framework OpenGL
-OBJECT_FILES =  src/models/*.o
-OBJECT_SPEC_FILES = spec/models/*.o
-#spec/controllers/*.o spec/views/*.o src/controllers/*.o src/views/*.o
+OBJECT_FILES =  src/models/*.o src/controllers/*.o
+OBJECT_SPEC_FILES = spec/models/*.o spec/controllers/*.o
+# spec/views/*.o src/controllers/*.o src/views/*.o
 
 
 test: all model_specs controller_specs view_specs
@@ -14,15 +14,15 @@ test: all model_specs controller_specs view_specs
 	$(CXX) $(OBJECT_FILES) $(OBJECT_SPEC_FILES) $(TEST_LIBS) -o tests
 	./tests
 
-model_specs: spec/models/particle_spec.o spec/models/color_spec.o spec/models/mass_spec.o spec/models/actor_spec.o spec/models/particle_generator_spec.o
+model_specs: spec/models/particle_spec.o spec/models/color_spec.o spec/models/mass_spec.o spec/models/particle_generator_spec.o
 
-controller_specs:
+controller_specs: spec/controllers/actor_controller_spec.o spec/controllers/particle_generator_controller_spec.o
 
 view_specs:
 
 models: src/models/particle.o src/models/color.o src/models/mass.o src/models/actor.o src/models/waveform.o src/models/particle_generator.o
 
-controllers:
+controllers: src/controllers/actor_controller.o src/controllers/particle_generator_controller.o
 
 views:
 

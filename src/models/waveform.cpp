@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "waveform.h"
-#include "actor.h"
+#include "../controllers/actor_controller.h"
 
 Waveform::Waveform() {
     running_ = false;
@@ -10,7 +10,7 @@ Waveform::Waveform() {
 void Waveform::update() {
     std::cout << "Updating" << std::endl;
 
-    std::vector<Actor*> actors = Actor::actors();
+    std::vector<Actor*> actors = ActorController::actors();
 
     for( unsigned i = 0; i < actors.size(); i++){
         Actor* actor = actors[i];

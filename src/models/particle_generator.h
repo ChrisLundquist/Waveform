@@ -1,9 +1,8 @@
 #include "particle.h"
 
-struct ParticleGenerator : Actor  {
+struct ParticleGenerator {
     ParticleGenerator();
-    void render();
-    void update();
+    Particle* generate();
     int intensity;
     glm::vec3 direction, position;
 };
