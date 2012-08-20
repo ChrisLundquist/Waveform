@@ -19,13 +19,13 @@ valgrind: test
 
 model_specs: spec/models/particle_spec.o spec/models/color_spec.o spec/models/mass_spec.o spec/models/particle_generator_spec.o
 
-controller_specs: spec/controllers/actor_controller_spec.o spec/controllers/particle_generator_controller_spec.o
+controller_specs: spec/controllers/particle_generator_controller_spec.o
 
 view_specs:
 
 models: src/models/particle.o src/models/color.o src/models/mass.o src/models/actor.o src/models/waveform.o src/models/particle_generator.o
 
-controllers: src/controllers/actor_controller.o src/controllers/particle_generator_controller.o
+controllers: src/controllers/particle_generator_controller.o
 
 views:
 
@@ -38,7 +38,7 @@ run: game
 	./Waveform
 
 clean:
-	rm -rf src/models/*.o spec/models/*.o Waveform
+	rm -rf $(OBJECT_FILES) $(OBJECT_SPEC_FILES) Waveform
 
 .cpp.o:
 	$(CXX) -c -O4 $(CFLAGS) $< -o $@

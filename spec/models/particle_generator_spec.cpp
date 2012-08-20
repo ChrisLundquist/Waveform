@@ -1,5 +1,4 @@
 #include <gtest/gtest.h>
-#include "../../src/controllers/actor_controller.h"
 #include "../../src/models/particle_generator.h"
 
 TEST(ParticleGenerator, Construct) {
