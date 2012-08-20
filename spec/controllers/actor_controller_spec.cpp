@@ -13,6 +13,7 @@ TEST(Actor,Populate) {
     EXPECT_EQ(ActorController::actors().size(), 1);
 
     ActorController::actors().clear();
+    delete particle;
 }
 
 TEST(Actor,Stress) {
