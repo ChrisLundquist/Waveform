@@ -15,8 +15,8 @@ ParticleGenerator::~ParticleGenerator() {
 
 Particle* ParticleGenerator::generate(){
     Particle* p = new Particle();
-    p->mass.velocity = direction;
-    p->mass.position = position;
+    p->velocity = direction;
+    p->position = position;
 
     return p;
 }

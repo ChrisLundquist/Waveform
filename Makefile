@@ -1,6 +1,6 @@
 #VPATH= src:test
 CFLAGS= -Wall -Wextra -pedantic
-CXX=g++-4.2
+CXX=g++
 TEST_LIBS=-lgtest -lgtest_main
 LIBS= -lGLEW
 FRAMEWORKS = -framework GLUT -framework OpenGL
@@ -17,13 +17,13 @@ test: all model_specs controller_specs view_specs
 valgrind: test
 	valgrind --leak-check=yes ./tests
 
-model_specs: spec/models/particle_spec.o spec/models/color_spec.o spec/models/mass_spec.o spec/models/particle_generator_spec.o
+model_specs: spec/models/particle_spec.o spec/models/color_spec.o spec/models/particle_generator_spec.o spec/models/force_spec.o
 
 controller_specs: spec/controllers/particle_generator_controller_spec.o
 
 view_specs:
 
-models: src/models/particle.o src/models/color.o src/models/mass.o src/models/actor.o src/models/waveform.o src/models/particle_generator.o
+models: src/models/particle.o src/models/color.o src/models/actor.o src/models/waveform.o src/models/particle_generator.o src/models/force.o
 
 controllers: src/controllers/particle_generator_controller.o
 
