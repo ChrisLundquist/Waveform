@@ -19,13 +19,13 @@ valgrind: test
 
 model_specs: spec/models/particle_spec.o spec/models/color_spec.o spec/models/particle_generator_spec.o spec/models/force_spec.o
 
-controller_specs: spec/controllers/particle_generator_controller_spec.o
+controller_specs: spec/controllers/particle_generator_controller_spec.o spec/controllers/force_controller_spec.o
 
 view_specs:
 
 models: src/models/particle.o src/models/color.o src/models/actor.o src/models/waveform.o src/models/particle_generator.o src/models/force.o
 
-controllers: src/controllers/particle_generator_controller.o
+controllers: src/controllers/particle_generator_controller.o src/controllers/force_controller.o
 
 views:
 
