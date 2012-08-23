@@ -1,13 +1,15 @@
 #include <iostream>
-
 #include "waveform.h"
 
 Waveform::Waveform() {
     running_ = false;
+    forces_controller = ForceController();
+    particles_controller = ParticleGeneratorController();
 }
 
 void Waveform::update() {
-    std::cout << "Updating" << std::endl;
+    particles_controller.generate();
+    apply_forces();
 }
 
 bool Waveform::running() {
@@ -20,4 +22,8 @@ bool Waveform::pause() {
 
 bool Waveform::start() {
     return running_ = true;
+}
+
+void Waveform::apply_forces() {
+    particles_controller.apply_forces(forces_controller.forces);
 }

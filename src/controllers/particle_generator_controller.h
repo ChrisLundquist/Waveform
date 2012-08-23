@@ -3,6 +3,7 @@
 
 struct ParticleGeneratorController {
     ParticleGeneratorController();
-    void update();
+    void generate();
+    void apply_forces(std::vector<Force*> &forces);
     std::vector<ParticleGenerator*> generators;
 };

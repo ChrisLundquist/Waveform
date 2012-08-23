@@ -20,7 +20,6 @@ Particle* ParticleGenerator::generate(){
 
     return p;
 }
-
 void ParticleGenerator::update(){
     for( int i = 0; i < intensity; i++){
         particles.push_back(generate());
