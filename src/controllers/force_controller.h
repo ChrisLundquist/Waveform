@@ -3,5 +3,6 @@
 
 struct ForceController {
     ForceController();
+    void render();
     std::vector<Force*> forces;
 };

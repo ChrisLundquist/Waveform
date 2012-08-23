@@ -3,7 +3,7 @@
 ParticleGenerator::ParticleGenerator(){
     intensity = 0;
     direction = glm::vec3(0,0,0);
-    position = glm::vec3(0,0,0);
+    position  = glm::vec3(0,0,0);
     particles = std::vector<Particle*>();
 }
 

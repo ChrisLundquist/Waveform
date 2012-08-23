@@ -24,3 +24,7 @@ void ParticleGeneratorController::generate() {
         generators[i]->update();
     }
 }
+
+void ParticleGeneratorController::render() {
+    return;
+}

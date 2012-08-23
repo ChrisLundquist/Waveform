@@ -7,7 +7,7 @@ TEST(Particle, Construct) {
     EXPECT_EQ(p.color.r, 1);
 }
 
-TEST(Particle,UpdatePosition) {
+TEST(Particle, UpdatePosition) {
     Particle p = Particle();
     p.velocity = glm::vec3(1, 0, 0);
 
@@ -17,7 +17,7 @@ TEST(Particle,UpdatePosition) {
     EXPECT_EQ(p.position.x, 2);
 }
 
-TEST(Particle,UpdateAge) {
+TEST(Particle, UpdateAge) {
     Particle p = Particle();
     EXPECT_EQ(p.age, 0);
 

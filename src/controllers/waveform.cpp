@@ -12,6 +12,11 @@ void Waveform::update() {
     apply_forces();
 }
 
+void Waveform::render() {
+    forces_controller.render();
+    particles_controller.render();
+}
+
 bool Waveform::running() {
     return running_;
 }

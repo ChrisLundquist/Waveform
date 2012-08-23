@@ -20,6 +20,7 @@ int main(int argc, char** argv) {
     game.start();
     while(game.running()){
         game.update();
+        game.render();
         game.pause();
     }
     return 0;
