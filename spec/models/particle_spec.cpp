@@ -3,11 +3,8 @@
 
 TEST(Particle, Construct) {
     Particle p = Particle();
-}
-
-TEST(Particle, Update) {
-    Particle p = Particle();
-    p.update();
+    EXPECT_EQ(p.position.x, 0);
+    EXPECT_EQ(p.color.r, 1);
 }
 
 TEST(Particle,UpdatePosition) {

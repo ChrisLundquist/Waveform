@@ -1,7 +1,7 @@
 #include "particle.h"
 
 Particle::Particle() {
-  color = Color();
+  color = glm::vec4(1,1,1,0);
   age = 0;
   position = glm::vec3(0,0,0);
   velocity = glm::vec3(0,0,0);
