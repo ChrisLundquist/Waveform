@@ -1,7 +1,6 @@
-#include "actor.h"
 #include "force.h"
 
-struct Particle : public Actor {
+struct Particle {
     Particle();
     virtual void update();
     void apply(Force& force);

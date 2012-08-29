@@ -23,7 +23,7 @@ controller_specs: spec/controllers/particle_generator_controller_spec.o spec/con
 
 view_specs:
 
-models: src/models/particle.o src/models/actor.o src/models/particle_generator.o src/models/force.o
+models: src/models/particle.o src/models/particle_generator.o src/models/force.o
 
 controllers: src/controllers/particle_generator_controller.o src/controllers/force_controller.o src/controllers/waveform.o
 
