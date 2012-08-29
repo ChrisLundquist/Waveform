@@ -7,10 +7,10 @@ class Waveform {
     ForceController forces_controller;
     ParticleGeneratorController particles_controller;
     void apply_forces();
-    void render();
   public:
     Waveform();
     void update();
+    void render();
     bool running();
     bool pause();
     bool start();
