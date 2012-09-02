@@ -1,3 +1,6 @@
+#ifndef PARTICLE_H
+#define PARTICLE_H
+
 #include "force.h"
 
 struct Particle {
@@ -9,3 +12,4 @@ struct Particle {
     glm::vec3 position, velocity, acceleration;
     glm::vec4 color;
 };
+#endif
