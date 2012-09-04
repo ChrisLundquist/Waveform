@@ -5,6 +5,7 @@
 static void init_graphics(int argc, char** argv) {
     glutInit(&argc,argv);
     glutCreateWindow("GLEW Test");
+    Shader minimal = Shader("shaders/minimal.vert", "shaders/minimal.frag");
 
     GLenum err = glewInit();
     if (GLEW_OK != err)
