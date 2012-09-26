@@ -6,9 +6,9 @@
 #define BUFFER_SIZE 512
 
 /**
-    text_file_read loads in a standard text file from a given filename and
-    then returns it as a string.
-*/
+  text_file_read loads in a standard text file from a given filename and
+  then returns it as a string.
+  */
 static std::string text_file_read(const char *fileName) {
     std::string fileString = std::string(); // A string for storing the file contents
     std::string line = std::string(); // A string for holding the current line
@@ -27,10 +27,10 @@ static std::string text_file_read(const char *fileName) {
 }
 
 /**
-    Given a shader and the filename associated with it, validate_shader will
-    then get information from OpenGl on whether or not the shader was compiled successfully
-    and if it wasn't, it will output the file with the problem, as well as the problem.
-*/
+  Given a shader and the filename associated with it, validate_shader will
+  then get information from OpenGl on whether or not the shader was compiled successfully
+  and if it wasn't, it will output the file with the problem, as well as the problem.
+  */
 static void validate_shader(GLuint shader, const char* file = 0) {
     char buffer[BUFFER_SIZE];
     memset(buffer, 0, BUFFER_SIZE);
@@ -42,46 +42,48 @@ static void validate_shader(GLuint shader, const char* file = 0) {
 }
 
 /**
-    Given a shader program, validate_program will request from OpenGL, any information
-    related to the validation or linking of the program with it's attached shaders. It will
-    then output any issues that have occurred.
-*/
+  Given a shader program, validate_program will request from OpenGL, any information
+  related to the validation or linking of the program with it's attached shaders. It will
+  then output any issues that have occurred.
+  */
 static void validate_program(GLuint program) {
     char buffer[BUFFER_SIZE];
     memset(buffer, 0, BUFFER_SIZE);
     GLsizei length = 0;
-    GLint status = 0;
-
-    glGetProgramInfoLog(program, BUFFER_SIZE, &length, buffer); // Ask OpenGL to give us the log associated with the program
-    if (length > 0) // If we have any information to display
-        std::cerr << "Program " << program << " link error: " << buffer << std::endl; // Output the information
+    GLint status = GL_FALSE;
 
     glValidateProgram(program); // Get OpenGL to try validating the program
     glGetProgramiv(program, GL_VALIDATE_STATUS, &status); // Find out if the shader program validated correctly
-    if (status == GL_FALSE) // If there was a problem validating
-        std::cerr << "Error validating shader " << program << std::endl; // Output which program had the error
+
+    if (status == GL_FALSE) { // If there was a problem validating
+        std::cerr << "Error validating program " << program << std::endl; // Output which program had the error
+
+        glGetProgramInfoLog(program, BUFFER_SIZE, &length, buffer); // Ask OpenGL to give us the log associated with the program
+        if (length > 0) // If we have any information to display
+            std::cerr << "Program " << program << " link error: " << buffer << std::endl; // Output the information
+    }
 }
 
 /**
-    Default constructor for the Shader class, at the moment it does nothing
-*/
+  Default constructor for the Shader class, at the moment it does nothing
+  */
 Shader::Shader() {
 
 }
 
 /**
-    Constructor for a Shader object which creates a GLSL shader based on a given
-    vertex and fragment shader file.
-*/
+  Constructor for a Shader object which creates a GLSL shader based on a given
+  vertex and fragment shader file.
+  */
 Shader::Shader(const char *vsFile, const char *fsFile) {
     inited = false; // Declare we have not initialized the shader yet
 
     init(vsFile, fsFile); // Initialize the shader
 }
 /**
-    init will take a vertex shader file and fragment shader file, and then attempt to create a valid
-    shader program from these. It will also check for any shader compilation issues along the way.
-*/
+  init will take a vertex shader file and fragment shader file, and then attempt to create a valid
+  shader program from these. It will also check for any shader compilation issues along the way.
+  */
 void Shader::init(const char *vsFile, const char *fsFile) {
     if (inited) // If we have already initialized the shader
         return;
@@ -127,9 +129,9 @@ void Shader::init(const char *vsFile, const char *fsFile) {
 }
 
 /**
-    Deconstructor for the Shader object which cleans up by detaching the shaders, deleting them
-    and finally deleting the GLSL program.
-*/
+  Deconstructor for the Shader object which cleans up by detaching the shaders, deleting them
+  and finally deleting the GLSL program.
+  */
 Shader::~Shader() {
     glDetachShader(shader_id, shader_fp); // Detach the fragment shader
     glDetachShader(shader_id, shader_vp); // Detach the vertex shader
@@ -140,22 +142,22 @@ Shader::~Shader() {
 }
 
 /**
-    id returns the integer value associated with the shader program
-*/
+  id returns the integer value associated with the shader program
+  */
 unsigned int Shader::id() {
     return shader_id; // Return the shaders identifier
 }
 
 /**
-    bind attaches the shader program for use by OpenGL
-*/
+  bind attaches the shader program for use by OpenGL
+  */
 void Shader::bind() {
     glUseProgram(shader_id);
 }
 
 /**
-    unbind detaches the shader program from OpenGL
-*/
+  unbind detaches the shader program from OpenGL
+  */
 void Shader::unbind() {
     glUseProgram(0);
 }

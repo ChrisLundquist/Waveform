@@ -38,7 +38,7 @@ run: game
 	./Waveform
 
 clean:
-	rm -rf $(OBJECT_FILES) $(OBJECT_SPEC_FILES) Waveform
+	rm -rf $(OBJECT_FILES) $(OBJECT_SPEC_FILES) main.o Waveform
 
 .cpp.o:
 	$(CXX) -g -c $(CFLAGS) $< -o $@
